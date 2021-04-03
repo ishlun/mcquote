@@ -87,9 +87,9 @@ int main(int argc, char *argv[])
         printf("pages: %d\nchars: %d\n", pages, last_chars);
     result = SDL_CreateRGBSurface(0, 800, 400*pages, 32,
                                    rmask, gmask, bmask, amask);
-    for(int i = 0; i < pages; i++)
+    for(int i = 1; i <= pages; i++)
     {
-        SDL_BlitSurface(render_text(&argv[i+1], i), NULL, result, NULL);
+        SDL_BlitSurface(render_text(&argv[i], pages > 1 ? 7 : last_chars), NULL, result, NULL);
     }
     save_mcq("result.png");
     quit_mcq();
