@@ -1,0 +1,1 @@
+int generate_quote(char *message);
